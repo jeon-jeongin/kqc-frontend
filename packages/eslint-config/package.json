@@ -1,0 +1,27 @@
+{
+  "name": "@kqc/eslint-config",
+  "version": "0.1.0",
+  "description": "KQC 공통 ESLint 설정 - 앱은 기본 프리셋(@mantine/* 차단), ui 패키지는 /ui 프리셋",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./ui": "./ui.js"
+  },
+  "files": [
+    "index.js",
+    "ui.js",
+    "base.js"
+  ],
+  "peerDependencies": {
+    "eslint": ">=9"
+  },
+  "dependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint-plugin-react-hooks": "^7.1.1",
+    "typescript-eslint": "^8.66.0"
+  },
+  "devDependencies": {
+    "eslint": "^10.8.0"
+  }
+}

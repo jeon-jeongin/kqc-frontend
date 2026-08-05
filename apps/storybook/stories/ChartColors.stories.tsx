@@ -9,7 +9,11 @@ import { Group, Stack, Text, theme } from '@kqc/ui';
 const meta: Meta = { title: 'Guide/차트 컬러', parameters: { layout: 'padded' } };
 export default meta;
 
-const chart = (theme.other as Record<string, any>).chart;
+const chart = (
+  theme.other as {
+    chart: { series: string[]; accentSeries: string; grid: string; axisText: string };
+  }
+).chart;
 
 function Swatch({ c, label }: { c: string; label: string }) {
   return (

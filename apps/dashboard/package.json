@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite --port 5173",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview --port 5174"
+    "preview": "vite preview --port 5174",
+    "lint": "eslint src"
   },
   "dependencies": {
     "@kqc/ui": "workspace:*",
@@ -18,9 +19,11 @@
     "zustand": "^5.0.14"
   },
   "devDependencies": {
+    "@kqc/eslint-config": "workspace:^",
     "@types/react": "^19.2.0",
     "@types/react-dom": "^19.2.4",
     "@vitejs/plugin-react": "^6.0.5",
+    "eslint": "^10.8.0",
     "typescript": "^5.7.2",
     "vite": "^8.2.0"
   }

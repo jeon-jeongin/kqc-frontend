@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { NumberInput, Stack } from '@kqc/ui';
+import { NumberInput } from '@kqc/ui';
 
 const meta: Meta<typeof NumberInput> = {
   title: 'Components/NumberInput',

@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Menu, Button, Text } from '@kqc/ui';
+import { Menu, Button } from '@kqc/ui';
 
 const meta: Meta<typeof Menu> = {
   title: 'Components/Menu',
