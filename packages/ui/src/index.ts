@@ -22,6 +22,7 @@ export {
 
 // 자주 쓰는 훅
 export { useDisclosure, useMediaQuery, useDebouncedValue } from '@mantine/hooks';
+export { useMantineColorScheme, useComputedColorScheme } from '@mantine/core';
 
 // 날짜 입력 (@mantine/dates) — 필터 툴바의 기간 선택 등
 export { DateInput, DatePickerInput, DatesProvider } from '@mantine/dates';
@@ -30,5 +31,3 @@ export { DateInput, DatePickerInput, DatesProvider } from '@mantine/dates';
 export {
   BarChart, LineChart, AreaChart, DonutChart, PieChart, Sparkline,
 } from '@mantine/charts';
-
-export { useMantineColorScheme, useComputedColorScheme } from '@mantine/core';

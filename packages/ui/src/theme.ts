@@ -181,7 +181,6 @@ export const theme = createTheme({
     // 선택된 옵션 체크는 우측 끝 (라벨 정렬 유지)
     Select: { defaultProps: { radius: 'sm', checkIconPosition: 'right' } },
     MultiSelect: { defaultProps: { radius: 'sm', checkIconPosition: 'right' } },
-    Title: { defaultProps: {} },
     // 사이드바 내비게이션: 활성 = navy light 배경 (accent 아님 — 원칙 §2)
     NavLink: { defaultProps: { color: 'navy' } },
     Pagination: { defaultProps: { size: 'sm', siblings: 1 } },
