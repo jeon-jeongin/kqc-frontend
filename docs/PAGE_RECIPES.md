@@ -2,7 +2,7 @@
 
 디자인하지 말고 **조립**하라. 색·폰트 크기·간격·radius·그림자는 테마가 이미 정했다 —
 팀원이 정할 것은 "어느 레시피인가"뿐이다. 우리 화면은 아래 5가지 유형으로 전부 커버된다.
-(근거 규칙은 [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md), 데이터 연결은 [features/_template](apps/dashboard/src/features/_template/))
+(근거 규칙은 [DESIGN_PRINCIPLES.md](DESIGN_PRINCIPLES.md), 데이터 연결은 [features/_template](../apps/dashboard/src/features/_template/))
 
 ## 모든 페이지의 공통 골격
 
@@ -28,7 +28,7 @@
 │ ┌ 최근 목록 카드 + "전체 보기" ───────┐ │
 └───────────────────────────────────────┘
 ```
-표본: [DashboardPage.tsx](apps/dashboard/src/pages/DashboardPage.tsx) — 트렌드 StatCard 포함. 통째로 복사해서 시작.
+표본: [DashboardPage.tsx](../apps/dashboard/src/pages/DashboardPage.tsx) — 트렌드 StatCard 포함. 통째로 복사해서 시작.
 차트 스타일(목표 기준선 = accent, 차트당 1개)은 Storybook `Components/Charts` 참고.
 
 ## 유형 2 — 목록 + 액션 (Table)
@@ -49,9 +49,9 @@
 페이지 크기는 10 기본, 선택지 [10/20/50] — `TablePagination`에 pageSize를 넘기면 "N개씩" 선택이 붙는다.
 데모: Storybook `Patterns/테이블 필터·페이지네이션`.
 
-표본: [TasksPage.tsx](apps/dashboard/src/pages/TasksPage.tsx) — 필터·검색·페이지네이션 + Modal 등록.
-변형(목록 + 사이드 분포 카드): [KeysPage.tsx](apps/dashboard/src/pages/KeysPage.tsx),
-다중 Chip 필터: [LogsPage.tsx](apps/dashboard/src/pages/LogsPage.tsx).
+표본: [TasksPage.tsx](../apps/dashboard/src/pages/TasksPage.tsx) — 필터·검색·페이지네이션 + Modal 등록.
+변형(목록 + 사이드 분포 카드): [KeysPage.tsx](../apps/dashboard/src/pages/KeysPage.tsx),
+다중 Chip 필터: [LogsPage.tsx](../apps/dashboard/src/pages/LogsPage.tsx).
 
 ## 유형 3 — 설정 (콘솔 §7)
 
@@ -70,7 +70,7 @@
 - 필드 4개 이상 → 별도 페이지: `<Card maw={640}>` 안에 `<Stack gap="md">`로 필드 나열
 - 버튼은 우하단 `<Group justify="flex-end">`: 취소(subtle gray) + 확인(기본 navy)
 - 파괴적 확인은 `color="red"` — 오렌지 아님
-- 검증은 zod `safeParse` → `error` prop ([_template README](apps/dashboard/src/features/_template/README.md)의 폼 스니펫)
+- 검증은 zod `safeParse` → `error` prop ([_template README](../apps/dashboard/src/features/_template/README.md)의 폼 스니펫)
 
 ## 유형 5 — 로그/이벤트 뷰어 (New Relic 스타일)
 
@@ -80,7 +80,7 @@
 │ ┌ 필터 칩 + 촘촘한 테이블 ───────┐ │   시각 2줄(날짜/시간 mono) · 레벨 Badge · 호스트 Anchor
 └─────────────────────────────────┘     WARN=yellow (오렌지는 CTA 전용 §2)
 ```
-표본: [LogsPage.tsx](apps/dashboard/src/pages/LogsPage.tsx) — `VolumeTimeline`(div 히스토그램)·`LevelBadge` 포함.
+표본: [LogsPage.tsx](../apps/dashboard/src/pages/LogsPage.tsx) — `VolumeTimeline`(div 히스토그램)·`LevelBadge` 포함.
 
 ## 팀원이 정하지 않는 것 (이미 정해져 있음)
 
