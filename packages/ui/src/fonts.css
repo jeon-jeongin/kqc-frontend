@@ -1,0 +1,32 @@
+/**
+ * KQC 브랜드 폰트 (opt-in) — 필요한 앱에서만: import '@kqc/ui/fonts.css'
+ * - Pretendard Variable: dynamic subset — 화면에 쓰인 글자 조각만 다운로드됨
+ * - NanumSquare: 가이드북 BS 10 지정서체 (L 300 / R 400 / B 700 / EB 800), 패키지에 번들
+ */
+@import 'pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css';
+@import '@fontsource/jetbrains-mono/400.css';
+
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 300;
+  font-display: swap;
+  src: url('./fonts/NanumSquareL.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 400;
+  font-display: swap;
+  src: url('./fonts/NanumSquareR.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 700;
+  font-display: swap;
+  src: url('./fonts/NanumSquareB.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'NanumSquare';
+  font-weight: 800;
+  font-display: swap;
+  src: url('./fonts/NanumSquareEB.woff2') format('woff2');
+}

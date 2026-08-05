@@ -1,0 +1,8 @@
+/* Storybook centered 레이아웃(body flex)에서 포털이 flex 아이템으로 밀리는 것 방지.
+   제품 앱에는 불필요·유해(스태킹 컨텍스트) — Storybook 환경 전용 워크어라운드 */
+[data-portal] {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 400;
+}

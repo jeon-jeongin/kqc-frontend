@@ -1,0 +1,16 @@
+{
+  "name": "@kqc/tokens",
+  "version": "0.1.0",
+  "description": "KQC 디자인 토큰 - 단일 소스 (Figma variables와 동기화)",
+  "main": "./dist/tokens.js",
+  "types": "./dist/tokens.d.ts",
+  "files": ["dist", "kqc-design-tokens.json"],
+  "exports": {
+    ".": { "types": "./dist/tokens.d.ts", "default": "./dist/tokens.js" },
+    "./css": "./dist/tokens.css",
+    "./json": "./kqc-design-tokens.json"
+  },
+  "scripts": {
+    "build": "node build.mjs"
+  }
+}

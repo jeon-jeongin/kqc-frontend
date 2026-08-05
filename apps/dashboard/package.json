@@ -1,0 +1,27 @@
+{
+  "name": "@kqc/dashboard",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite --port 5173",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --port 5174"
+  },
+  "dependencies": {
+    "@kqc/ui": "workspace:*",
+    "@tanstack/react-query": "^5.101.4",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router": "^8.3.0",
+    "zod": "^4.4.3",
+    "zustand": "^5.0.14"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.0",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.0.5",
+    "typescript": "^5.7.2",
+    "vite": "^8.2.0"
+  }
+}
