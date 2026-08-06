@@ -1,10 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { BarChart, LineChart, DonutChart, Sparkline, Stack, Text, Group } from '@kqc/ui';
+import { BarChart, LineChart, DonutChart, Sparkline, Stack, Text, Group, CHART_SERIES } from '@kqc/ui';
 
-/**
- * @mantine/charts (Recharts 래핑). 색 규칙:
- * - 시리즈 순서 = 'navy' → 'navy.2' → 'gray.5'
- */
+/** 시리즈 색은 CHART_SERIES 순서대로 꺼내 쓴다 (Guide/차트 컬러) */
 const meta: Meta = { title: 'Components/Charts', parameters: { layout: 'padded' } };
 export default meta;
 
@@ -21,8 +18,8 @@ export const Bar: StoryObj = {
     <BarChart
       h={240} w={520} data={monthly} dataKey="month"
       series={[
-        { name: '완료', color: 'navy' },
-        { name: '진행', color: 'navy.2' },
+        { name: '완료', color: CHART_SERIES[0] },
+        { name: '진행', color: CHART_SERIES[1] },
       ]}
     />
   ),
@@ -34,8 +31,8 @@ export const AccentSeries: StoryObj = {
     <LineChart
       h={240} w={520} data={monthly} dataKey="month" curveType="linear"
       series={[
-        { name: '완료', color: 'navy' },
-        { name: '진행', color: 'gray.5' },
+        { name: '완료', color: CHART_SERIES[0] },
+        { name: '진행', color: CHART_SERIES[1] },
       ]}
       referenceLines={[{ y: 55, color: 'gray.6', label: '목표' }]}
     />
@@ -48,9 +45,9 @@ export const Donut: StoryObj = {
       <DonutChart
         size={160} thickness={22} withLabelsLine={false} withLabels
         data={[
-          { name: '플랫폼', value: 45, color: 'navy' },
-          { name: '인프라', value: 30, color: 'navy.2' },
-          { name: '리서치', value: 25, color: 'gray.4' },
+          { name: '플랫폼', value: 45, color: CHART_SERIES[0] },
+          { name: '인프라', value: 30, color: CHART_SERIES[1] },
+          { name: '리서치', value: 25, color: CHART_SERIES[2] },
         ]}
       />
       <Stack gap={4}>
@@ -66,7 +63,7 @@ export const SparklineInline: StoryObj = {
   render: () => (
     <Group align="center">
       <Text size="sm">주간 가동률</Text>
-      <Sparkline w={140} h={36} data={[92, 95, 91, 97, 99, 98, 99]} color="navy" fillOpacity={0.15} />
+      <Sparkline w={140} h={36} data={[92, 95, 91, 97, 99, 98, 99]} color={CHART_SERIES[0]} fillOpacity={0.15} />
       <Text size="sm" fw={700} c="navy">99.2%</Text>
     </Group>
   ),

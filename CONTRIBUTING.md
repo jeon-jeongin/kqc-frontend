@@ -41,7 +41,7 @@ Mantine v9은 @kqc/ui 내부에 격리되어 있다 — 서비스 코드는 Mant
 | 브랜드 원색 변조 금지: navy `#012169`(팔레트 index 9) | 가이드북 BS 07 |
 | UI 색은 gray + navy + 기능색(red/yellow/green)만. 나머지 팔레트는 참고용 | §2 |
 | raw hex·`gray.6` 같은 스킴 고정 색 금지 — 본문은 색 지정 없음, 보조는 `c="dimmed"`, 브랜드 텍스트·링크는 `c="navy"`(인덱스 없이), 배경은 `light-dark()` | §5 |
-| 차트 시리즈 순서: `'navy'` → `'navy.2'` → `'gray.5'`. `navy.6`·`navy.7` 시리즈 금지 | §5-4 |
+| 차트 시리즈는 `CHART_SERIES` 순서대로 (팔레트 순, 무채색 제외) | §5-4 |
 | 색은 이름만 — `color="red"`처럼. 인덱스를 박으면 다크에서 대비가 무너진다 | §5-2 |
 | 간격은 별칭만: Group 기본 8 / Stack 기본 16 (theme이 강제) — 임의 px 지양 | §4 |
 

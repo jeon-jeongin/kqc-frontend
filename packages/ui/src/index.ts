@@ -1,6 +1,6 @@
 export { ThemeProvider } from './ThemeProvider';
 // kqcCssVariablesResolver는 자체 MantineProvider를 쓰는 앱만 직접 넘기면 된다.
-export { theme, kqcCssVariablesResolver } from './theme';
+export { theme, kqcCssVariablesResolver, CHART_SERIES, CHART_PALETTES } from './theme';
 export { tokens } from '@kqc/tokens';
 
 export { Button, type ButtonProps } from './components/Button';

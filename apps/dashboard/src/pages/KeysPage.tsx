@@ -2,14 +2,13 @@ import { useState } from 'react';
 import {
   Button, Card, DonutChart, Group, Modal, Select, Skeleton, Stack, Table, Text,
   TextInput, Title,
-  TableToolbar, TablePagination, usePagedList,
+  TableToolbar, TablePagination, usePagedList, CHART_SERIES,
 } from '@kqc/ui';
 import { useDisclosure } from '@kqc/ui';
 import { useKeysQuery, useCreateKeyMutation } from '../features/keys/queries';
 import { KeyCreateSchema, KEY_TYPES } from '../features/keys/schemas';
 import { KeyStatusBadge } from '../features/keys/KeyStatusBadge';
 
-const TYPE_COLORS = ['navy', 'navy.2', 'gray.4'];
 
 function CreateKeyModal({ opened, onClose }: { opened: boolean; onClose: () => void }) {
   const createKey = useCreateKeyMutation();
@@ -81,7 +80,7 @@ export function KeysPage() {
   const byType = KEY_TYPES.map((t, i) => ({
     name: t,
     value: keys?.filter((k) => k.type === t).length ?? 0,
-    color: TYPE_COLORS[i],
+    color: CHART_SERIES[i],
   }));
 
   return (

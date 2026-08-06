@@ -77,6 +77,13 @@ const inputBg = 'light-dark(var(--mantine-color-gray-2), var(--mantine-color-dar
  */
 const surfaceBg = 'light-dark(var(--mantine-color-gray-0), #21252A)';
 
+/**
+ * 차트 시리즈 순서 — 팔레트 순(무채색 제외). 스킴별 단계 전환은 global.css의 light-dark().
+ * 시리즈가 8개 이상이면 색을 늘리지 말고 차트를 쪼갠다.
+ */
+export const CHART_PALETTES = ['navy', 'red', 'green', 'orange', 'teal', 'yellow', 'purple'] as const;
+export const CHART_SERIES = CHART_PALETTES.map((_, i) => `var(--kqc-chart-${i + 1})`);
+
 const brandFont = "NanumSquare, 'Pretendard Variable', Pretendard, -apple-system, sans-serif";
 const bodyFont = "'Pretendard Variable', Pretendard, NanumSquare, -apple-system, sans-serif";
 const monoFont = "'JetBrains Mono', 'D2Coding', monospace";
@@ -278,9 +285,8 @@ export const theme = createTheme({
       fast: '120ms', normal: '200ms', slow: '320ms',
       easing: 'cubic-bezier(0.2, 0, 0, 1)',
     },
-    // 다크 대응 차트는 색 이름('navy' → 'navy.2')으로 지정한다.
     chart: {
-      series: [navy[7], navy[3], gray[5], navy[9], gray[7]],
+      series: CHART_SERIES,
       grid: gray[2], axisText: gray[6],
     },
     zIndex: { dropdown: 100, sticky: 200, overlay: 300, modal: 400, toast: 500 },

@@ -23,8 +23,8 @@ UI에 쓰는 색은 **무채색(gray) + navy + 기능색** 셋뿐이다.
 | 중립 | `gray` — 텍스트 위계, 배경, 보더. `gray.400`은 placeholder/disabled 전용 |
 | 기능 | `red` 오류 · `yellow` 경고 · `green` 성공 |
 
-기능색은 위 셋이 전부다. 그 외 팔레트(`orange` `teal` `purple`)는 **참고용 색상표**이며
-역할이 지정돼 있지 않다.
+기능색은 위 셋이 전부다. 그 외 팔레트(`orange` `teal` `purple`)는 UI 역할이 없고
+**차트 시리즈와 참고용 색상표**로만 쓴다 (§5-4).
 
 `navy.900` `#012169`(PANTONE 280C)은 로고·워드마크·큰 면적 브랜드 배경(`bg.brand`)에 쓴다.
 버튼·토글의 채움색으로는 쓰지 않는다 — 다크 표면 대비가 1.05:1이라 컨트롤이 배경에 묻힌다.
@@ -99,8 +99,10 @@ xs(카드 — 보더 없이 이것만으로 구분) / sm(드롭다운·팝오버
 2. 색은 **이름만** 쓴다 — `c="navy"`, `color="red"`. 인덱스를 박으면 다크에서 대비가 무너진다.
    `primaryShade`(라이트 7 / 다크 6)가 스킴별 단계를 고른다.
 3. 배경은 `light-dark(라이트값, 다크값)` 또는 Mantine 변수(`--mantine-color-body` 등)만.
-4. 차트 시리즈 순서: `'navy'` → `'navy.2'` → `'gray.5'`.
-   `navy.6`·`navy.7`은 시리즈 금지 — 1번 시리즈와 같은 색이 된다.
+4. 차트 시리즈는 `CHART_SERIES`에서 순서대로 꺼내 쓴다 —
+   navy·red·green·orange·teal·yellow·purple, 라이트 300 / 다크 200으로 자동 전환.
+   8개를 넘으면 색을 늘리지 말고 차트를 쪼갠다. 축·그리드선만 gray.
+   red↔green, red↔orange는 적록색약에서 ΔE 3 아래라 **범례가 반드시 있어야 구분된다.**
 5. `theme.other`의 hex 값들은 라이트 전용 — 다크 대응 화면에서 직접 사용 금지.
 6. 포커스 링은 라이트 navy.700 / 다크 navy.600 (`light-dark()`, global.css).
 7. 다크 hover는 **밝아지는 방향**이다. Mantine 기본값은 오히려 어두워져 버튼 경계가 사라진다

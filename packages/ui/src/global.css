@@ -1,5 +1,14 @@
 :root {
   --kqc-border-width: 0.5px;
+
+  /* 차트 시리즈 — 라이트 300 / 다크 200 */
+  --kqc-chart-1: light-dark(var(--mantine-color-navy-3), var(--mantine-color-navy-2)); /* navy */
+  --kqc-chart-2: light-dark(var(--mantine-color-red-3), var(--mantine-color-red-2)); /* red */
+  --kqc-chart-3: light-dark(var(--mantine-color-green-3), var(--mantine-color-green-2)); /* green */
+  --kqc-chart-4: light-dark(var(--mantine-color-orange-3), var(--mantine-color-orange-2)); /* orange */
+  --kqc-chart-5: light-dark(var(--mantine-color-teal-3), var(--mantine-color-teal-2)); /* teal */
+  --kqc-chart-6: light-dark(var(--mantine-color-yellow-3), var(--mantine-color-yellow-2)); /* yellow */
+  --kqc-chart-7: light-dark(var(--mantine-color-purple-3), var(--mantine-color-purple-2)); /* purple */
 }
 
 /* 구조 보더(카드·테이블·AppShell)만 얇게. Mantine이 폭을 1px로 박아둬서 여기서 덮는다.

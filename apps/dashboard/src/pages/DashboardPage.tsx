@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import {
   Anchor, AreaChart, Card, DonutChart, Group, Select, Skeleton, Stack, Table, Text, Title,
+  CHART_SERIES,
 } from '@kqc/ui';
 import { Link } from 'react-router';
 import { useTasksQuery } from '../features/tasks/queries';
@@ -15,9 +16,9 @@ const monthly = [
   { month: '8월', 완료: 21, 진행: 18 },
 ];
 const byPart = [
-  { name: '플랫폼', value: 45, color: 'navy' },
-  { name: '인프라', value: 30, color: 'navy.2' },
-  { name: '리서치', value: 25, color: 'gray.4' },
+  { name: '플랫폼', value: 45, color: CHART_SERIES[0] },
+  { name: '인프라', value: 30, color: CHART_SERIES[1] },
+  { name: '리서치', value: 25, color: CHART_SERIES[2] },
 ];
 
 function StatCard({
@@ -90,8 +91,8 @@ export function DashboardPage() {
             data={monthly}
             dataKey="month"
             series={[
-              { name: '완료', color: 'navy' },
-              { name: '진행', color: 'navy.2' },
+              { name: '완료', color: CHART_SERIES[0] },
+              { name: '진행', color: CHART_SERIES[1] },
             ]}
             curveType="monotone"
             withLegend
