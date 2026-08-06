@@ -1,6 +1,6 @@
 // Provider & 테마
 export { ThemeProvider } from './ThemeProvider';
-export { theme } from './theme';
+export { theme, kqcCssVariablesResolver } from './theme';
 export { tokens } from '@kqc/tokens';
 
 // 컴포넌트 (서비스 코드는 반드시 @kqc/ui에서만 import — @mantine/* 직접 import 금지)

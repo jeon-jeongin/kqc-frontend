@@ -1,6 +1,7 @@
 import {
   createTheme, rem, defaultVariantColorsResolver,
   type VariantColorsResolver, type MantineColorsTuple, type MantineTheme,
+  type CSSVariablesResolver,
 } from '@mantine/core';
 
 /**
@@ -8,14 +9,18 @@ import {
  * 단일 소스: kqc-design-tokens.json / 사용 규칙: DESIGN_PRINCIPLES.md
  *
  * 컬러 정책
- * - primary = navy(#012169, index 7). 모든 기본 액션은 네이비.
+ * - 브랜드 원색 = navy.700(#012169, PANTONE 280C). 로고·워드마크·큰 면적 배경 전용.
+ * - primary(인터랙션) = navy.500(라이트) / navy.400(다크). 모든 기본 액션은 네이비.
  * - accent = orange(#EA733D, index 5). 화면당 핵심 CTA 1개 + 소면적 인디케이터만.
  */
 
 const navy: MantineColorsTuple = [
-  '#E9EEF9', '#C7D3EE', '#A2B5E0', '#7B95CF', '#5476BD',
-  '#2F53A3', '#123A85', '#012169', '#011A54', '#011240',
+  '#EBF0FA', '#CDDBF4', '#A5BEEC', '#799EE3', '#356AD6',
+  '#2354B6', '#0D388F', '#012169', '#011A54', '#011240',
 ];
+
+const navyDarkHover = '#3E71D7';
+
 const accent: MantineColorsTuple = [
   '#FDF1EA', '#F9DAC8', '#F4BFA0', '#F0A377', '#ED8B57',
   '#EA733D', '#D05F2B', '#AC4C20', '#863A17', '#5E280F',
@@ -37,7 +42,7 @@ const kqcVariantColorResolver: VariantColorsResolver = (input) => {
   const defaults = defaultVariantColorsResolver(input);
 
   // 시맨틱 색(red=위험, green=성공)의 filled는 스킴과 무관하게 원색 유지.
-  // primaryShade { dark: 4 }는 매우 어두운 navy(#012169)의 다크 가독성 보정일 뿐,
+  // primaryShade { dark: 4 }는 어두운 navy의 다크 가독성 보정일 뿐,
   // red/green까지 밝은 파스텔로 밀어 올릴 이유가 없다 (다크에서도 원색이 충분히 보임).
   if ((input.color === 'red' || input.color === 'green') && input.variant === 'filled') {
     return {
@@ -74,7 +79,7 @@ const kqcVariantColorResolver: VariantColorsResolver = (input) => {
 export const theme = createTheme({
   colors: { navy, accent, gray },
   primaryColor: 'navy',
-  primaryShade: { light: 5, dark: 3 }, // 라이트=#2F53A3 / 다크=#7B95CF (가시성 개선)
+  primaryShade: { light: 5, dark: 4 },
   variantColorResolver: kqcVariantColorResolver,
 
   /* ---------- 타이포그래피 (역할 기반) ---------- */
@@ -202,11 +207,12 @@ export const theme = createTheme({
    * light-dark() / c="navy" 방식만 사용할 것. */
   other: {
     text: { primary: gray[9], secondary: gray[6], muted: gray[4], brand: navy[7] },
+    action: { primary: navy[5], primaryHover: navy[6], primaryDark: navy[4], primaryHoverDark: navyDarkHover },
     bg: {
       page: gray[0], surface: '#FFFFFF', subtle: gray[1],
       brandSubtle: navy[0], accentSubtle: accent[0],
     },
-    border: { default: gray[2], strong: gray[3], focus: navy[5] },
+    border: { default: gray[2], strong: gray[3], focus: navy[5], focusDark: navy[4] },
     typography: {
       display: { fontFamily: brandFont, fontWeight: 800, fontSize: rem(48), lineHeight: 1.25, letterSpacing: '-0.02em' },
       overline: { fontFamily: bodyFont, fontWeight: 700, fontSize: rem(11), lineHeight: 1.4, letterSpacing: '0.06em', textTransform: 'uppercase' },
@@ -223,10 +229,19 @@ export const theme = createTheme({
     },
     // 데이터 시각화: 시리즈는 이 순서대로만. 강조 시리즈(accent)는 차트당 1개 (원칙 §2)
     chart: {
-      series: [navy[7], navy[4], gray[5], navy[2], gray[7]],
+      series: [navy[5], navy[2], gray[5], navy[7], gray[7]],
       accentSeries: accent[5],
       grid: gray[2], axisText: gray[6],
     },
     zIndex: { dropdown: 100, sticky: 200, overlay: 300, modal: 400, toast: 500 },
+  },
+});
+
+export const kqcCssVariablesResolver: CSSVariablesResolver = () => ({
+  variables: {},
+  light: {},
+  dark: {
+    '--mantine-color-navy-text': navy[3],
+    '--mantine-color-navy-filled-hover': navyDarkHover,
   },
 });

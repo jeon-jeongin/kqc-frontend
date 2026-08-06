@@ -2,14 +2,14 @@
   "global": {
     "color": {
       "navy": {
-        "50":  { "value": "#E9EEF9", "type": "color" },
-        "100": { "value": "#C7D3EE", "type": "color" },
-        "200": { "value": "#A2B5E0", "type": "color" },
-        "300": { "value": "#7B95CF", "type": "color" },
-        "400": { "value": "#5476BD", "type": "color" },
-        "500": { "value": "#2F53A3", "type": "color" },
-        "600": { "value": "#123A85", "type": "color" },
-        "700": { "value": "#012169", "type": "color", "description": "KQC Main Color - PANTONE 280C" },
+        "50":  { "value": "#EBF0FA", "type": "color" },
+        "100": { "value": "#CDDBF4", "type": "color" },
+        "200": { "value": "#A5BEEC", "type": "color" },
+        "300": { "value": "#799EE3", "type": "color" },
+        "400": { "value": "#356AD6", "type": "color", "description": "다크 스킴 프라이머리. 흰 라벨 5.0:1 / 다크 배경 대비 3.1:1" },
+        "500": { "value": "#2354B6", "type": "color", "description": "라이트 스킴 프라이머리. 흰 라벨 7.0:1" },
+        "600": { "value": "#0D388F", "type": "color" },
+        "700": { "value": "#012169", "type": "color", "description": "KQC Main Color - PANTONE 280C. 브랜드 원색(로고·큰 면적 배경). 인터랙션에는 500/400 사용" },
         "800": { "value": "#011A54", "type": "color" },
         "900": { "value": "#011240", "type": "color" }
       },
@@ -183,7 +183,7 @@
       "primary":   { "value": "{color.gray.900}", "type": "color" },
       "secondary": { "value": "{color.gray.600}", "type": "color" },
       "muted":     { "value": "{color.gray.400}", "type": "color", "description": "placeholder/disabled 전용. 본문 금지(대비 미달)" },
-      "brand":     { "value": "{color.navy.700}", "type": "color" },
+      "brand":     { "value": "{color.navy.700}", "type": "color", "description": "브랜드 표기(로고·워드마크) 전용. 링크/액션 텍스트는 action.primary" },
       "inverse":   { "value": "{color.white}", "type": "color" },
       "error":     { "value": "{color.red.600}", "type": "color" },
       "success":   { "value": "{color.green.600}", "type": "color" }
@@ -192,20 +192,23 @@
       "page":        { "value": "{color.gray.50}", "type": "color" },
       "surface":     { "value": "{color.white}", "type": "color" },
       "subtle":      { "value": "{color.gray.100}", "type": "color" },
-      "brand":       { "value": "{color.navy.700}", "type": "color" },
+      "brand":       { "value": "{color.navy.700}", "type": "color", "description": "브랜드 원색 배경(히어로 밴드 등 큰 면적). 위 텍스트는 항상 white" },
       "brandSubtle": { "value": "{color.navy.50}", "type": "color" },
       "accentSubtle":{ "value": "{color.orange.50}", "type": "color", "description": "화면당 1개 영역 이하" }
     },
     "border": {
-      "default": { "value": "{color.gray.200}", "type": "color" },
-      "strong":  { "value": "{color.gray.300}", "type": "color" },
-      "focus":   { "value": "{color.navy.500}", "type": "color" }
+      "default":   { "value": "{color.gray.200}", "type": "color" },
+      "strong":    { "value": "{color.gray.300}", "type": "color" },
+      "focus":     { "value": "{color.navy.500}", "type": "color" },
+      "focusDark": { "value": "{color.navy.400}", "type": "color", "description": "다크 스킴 포커스 링. 500은 다크 배경에서 2.2:1로 미달" }
     },
     "action": {
-      "primary":      { "value": "{color.navy.700}", "type": "color" },
-      "primaryHover": { "value": "{color.navy.800}", "type": "color" },
-      "accent":       { "value": "{color.orange.500}", "type": "color", "description": "핵심 CTA 전용. 화면당 최대 1개" },
-      "accentHover":  { "value": "{color.orange.600}", "type": "color" }
+      "primary":          { "value": "{color.navy.500}", "type": "color", "description": "라이트 스킴 기본 액션. 700/800은 다크 스킴에서 배경과 구분되지 않아 사용 금지" },
+      "primaryHover":     { "value": "{color.navy.600}", "type": "color" },
+      "primaryDark":      { "value": "{color.navy.400}", "type": "color", "description": "다크 스킴 기본 액션" },
+      "primaryHoverDark": { "value": "#3E71D7", "type": "color", "description": "navy.400과 navy.300 사이. 다크에서 hover는 밝아져야 하지만 흰 라벨 4.5:1을 지키려면 400보다 한 단계만 밝힐 수 있다" },
+      "accent":           { "value": "{color.orange.500}", "type": "color", "description": "핵심 CTA 전용. 화면당 최대 1개" },
+      "accentHover":      { "value": "{color.orange.600}", "type": "color" }
     },
     "indicator": {
       "active": { "value": "{color.orange.500}", "type": "color", "description": "탭 active bar, 현재 스텝 등 소면적" }

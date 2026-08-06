@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
 import { MantineProvider, type MantineProviderProps } from '@mantine/core';
-import { theme } from './theme';
+import { theme, kqcCssVariablesResolver } from './theme';
 
 export interface ThemeProviderProps
   extends Omit<MantineProviderProps, 'theme' | 'classNamesPrefix'> {
@@ -17,7 +17,13 @@ export interface ThemeProviderProps
  */
 export function ThemeProvider({ children, ...rest }: ThemeProviderProps) {
   return (
-    <MantineProvider theme={theme} classNamesPrefix="kqc" defaultColorScheme="light" {...rest}>
+    <MantineProvider
+      theme={theme}
+      cssVariablesResolver={kqcCssVariablesResolver}
+      classNamesPrefix="kqc"
+      defaultColorScheme="light"
+      {...rest}
+    >
       {children}
     </MantineProvider>
   );

@@ -3,9 +3,9 @@
  * 근거: DESIGN_PRINCIPLES.md §5 접근성 기준선
  */
 
-/* 포커스 링: border.focus(navy.500 #2F53A3) 2px.
-   navy.700 버튼 위에서도 링이 보이도록 원색보다 한 단계 밝은 500을 사용.
-   다크에서는 500이 어두운 배경과 약 2.3:1로 미달 → 400(#5476BD, 약 3.7:1)으로 전환 */
+/* 포커스 링: border.focus(navy.500 #2354B6) 2px. outline-offset로 요소 바깥에 그리므로
+   기준은 "요소 색"이 아니라 "페이지 배경 색"이다 — 흰 배경 대비 7.0:1.
+   다크에서는 500이 어두운 배경과 2.2:1로 미달 → 400(#356AD6, 3.1:1)으로 전환 */
 :where(:focus-visible) {
   outline: 2px solid light-dark(var(--mantine-color-navy-5), var(--mantine-color-navy-4));
   outline-offset: 2px;
