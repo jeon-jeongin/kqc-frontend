@@ -26,7 +26,7 @@ function VolumeTimeline() {
               borderRadius: 2,
               background:
                 v >= PEAK
-                  ? 'light-dark(var(--mantine-color-navy-5), var(--mantine-color-navy-4))'
+                  ? 'light-dark(var(--mantine-color-navy-7), var(--mantine-color-navy-6))'
                   : 'light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-4))',
             }}
           />
@@ -52,7 +52,7 @@ export function LogsPage() {
       (level === '전체' || log.level === level) &&
       (services.length === 0 || services.includes(log.service)),
   );
-  const { pageItems, page, setPage, totalPages, totalCount, pageSize, setPageSize } =
+  const { pageItems, page, setPage, totalPages, pageSize, setPageSize } =
     usePagedList(visible, 10);
 
   return (
@@ -73,22 +73,22 @@ export function LogsPage() {
       <Card>
         <TableToolbar
           filters={
-            <>
-              <SegmentedControl
-                value={level}
-                onChange={setLevel}
-                data={['전체', 'INFO', 'WARN', 'ERROR']}
-              />
-              <Chip.Group multiple value={services} onChange={setServices}>
-                <Group gap={6}>
-                  {allServices.map((service) => (
-                    <Chip key={service} value={service} size="xs" radius="sm">
-                      {service}
-                    </Chip>
-                  ))}
-                </Group>
-              </Chip.Group>
-            </>
+            <SegmentedControl
+              value={level}
+              onChange={setLevel}
+              data={['전체', 'INFO', 'WARN', 'ERROR']}
+            />
+          }
+          right={
+            <Chip.Group multiple value={services} onChange={setServices}>
+              <Group gap={6}>
+                {allServices.map((service) => (
+                  <Chip key={service} value={service} size="xs" radius="sm">
+                    {service}
+                  </Chip>
+                ))}
+              </Group>
+            </Chip.Group>
           }
         />
 
@@ -122,7 +122,6 @@ export function LogsPage() {
             <TablePagination
               page={page}
               totalPages={totalPages}
-              totalCount={totalCount}
               onChange={setPage}
               pageSize={pageSize}
               onPageSizeChange={setPageSize}

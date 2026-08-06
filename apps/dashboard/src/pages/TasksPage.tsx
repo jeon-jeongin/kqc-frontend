@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import {
-  Button, Card, Divider, Group, Modal, Select, SegmentedControl, Skeleton, Stack,
+  Button, Card, Group, Modal, Select, SegmentedControl, Skeleton, Stack,
   Table, Text, TextInput, Title,
   TableToolbar, TablePagination, usePagedList,
 } from '@kqc/ui';
@@ -8,8 +8,6 @@ import { useDisclosure } from '@kqc/ui';
 import { useTasksQuery, useCreateTaskMutation } from '../features/tasks/queries';
 import { TaskCreateSchema, TASK_PARTS } from '../features/tasks/schemas';
 import { StatusBadge } from '../features/tasks/StatusBadge';
-
-/* 참조 구현 — 새 페이지를 만들 때의 표본. 절차는 features/_template/README.md */
 
 function CreateTaskModal({ opened, onClose }: { opened: boolean; onClose: () => void }) {
   const createTask = useCreateTaskMutation();
@@ -55,7 +53,6 @@ function CreateTaskModal({ opened, onClose }: { opened: boolean; onClose: () => 
           onChange={setPart}
           error={errors.part}
         />
-        <Divider />
         <Group justify="flex-end">
           <Button variant="subtle" color="gray" onClick={onClose}>취소</Button>
           <Button onClick={submit} loading={createTask.isPending}>등록</Button>
@@ -76,7 +73,7 @@ export function TasksPage() {
       (filter === '전체' || t.status === filter) &&
       (search === '' || t.name.includes(search) || t.id.includes(search)),
   );
-  const { pageItems, page, setPage, totalPages, totalCount, pageSize, setPageSize } =
+  const { pageItems, page, setPage, totalPages, pageSize, setPageSize } =
     usePagedList(visible, 10);
   const count = (s: string) => tasks?.filter((t) => t.status === s).length ?? 0;
 
@@ -140,7 +137,6 @@ export function TasksPage() {
             <TablePagination
               page={page}
               totalPages={totalPages}
-              totalCount={totalCount}
               onChange={setPage}
               pageSize={pageSize}
               onPageSizeChange={setPageSize}

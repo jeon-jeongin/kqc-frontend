@@ -11,29 +11,32 @@ const Swatch = ({ name, value }: { name: string; value: string }) => (
   </Stack>
 );
 
+const ramp = (prefix: string) =>
+  Object.entries(tokens)
+    .filter(([k]) => k.startsWith(`color_${prefix}_`))
+    .map(([k, v]) => <Swatch key={k} name={k.split('_').pop()!} value={v} />);
+
+const Section = ({ title, name }: { title: string; name: string }) => (
+  <div>
+    <Title order={4}>{title}</Title>
+    <Group mt="sm">{ramp(name)}</Group>
+  </div>
+);
+
 export const Palette: StoryObj = {
-  render: () => {
-    const ramp = (prefix: string) =>
-      Object.entries(tokens)
-        .filter(([k]) => k.startsWith(`color_${prefix}_`))
-        .map(([k, v]) => <Swatch key={k} name={k.split('_').pop()!} value={v} />);
-    return (
-      <Stack gap="lg">
-        <div>
-          <Title order={4}>Navy — Main (#012169)</Title>
-          <Group mt="sm">{ramp('navy')}</Group>
-        </div>
-        <div>
-          <Title order={4}>Orange — Point (#EA733D, 절제 사용)</Title>
-          <Group mt="sm">{ramp('orange')}</Group>
-        </div>
-        <div>
-          <Title order={4}>Gray</Title>
-          <Group mt="sm">{ramp('gray')}</Group>
-        </div>
-      </Stack>
-    );
-  },
+  render: () => (
+    <Stack gap="lg">
+      <Section name="gray" title="Gray" />
+      <Section name="navy" title="Navy" />
+      <Section name="red" title="Red" />
+      <Section name="orange" title="Orange" />
+      <Section name="yellow" title="Yellow" />
+      <Section name="green" title="Green" />
+      <Section name="teal" title="Teal" />
+      <Section name="purple" title="Purple" />
+      <Section name="background" title="Background" />
+    </Stack>
+  ),
 };
 
 export const Typography: StoryObj = {

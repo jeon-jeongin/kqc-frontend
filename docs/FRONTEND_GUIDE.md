@@ -10,7 +10,7 @@
 | # | 규칙 | 강제 장치 |
 |---|---|---|
 | ① | UI는 `@kqc/ui`에서만 import — `@mantine/*` 직접 import 금지. 아이콘도 `@kqc/ui/icons`에서 ([tabler.io/icons](https://tabler.io/icons)에서 검색) | ESLint가 빌드에서 차단 |
-| ② | 색 규칙: 색은 기본적으로 지정하지 않음 · 오렌지는 화면당 CTA 1개 · 스킴 고정 색 금지 | [DESIGN_PRINCIPLES §2·§5](DESIGN_PRINCIPLES.md) + 코드리뷰 |
+| ② | 색 규칙: 색은 기본적으로 지정하지 않음 · 스킴 고정 색 금지 | [DESIGN_PRINCIPLES §2·§5](DESIGN_PRINCIPLES.md) + 코드리뷰 |
 | ③ | 서버 통신은 `api()` + zod 스키마 경계를 통해서만 (fetch/axios 직접 호출 금지) | 코드리뷰 |
 
 **자유 영역**: 페이지 구성, 컴포넌트 조합, 지역 상태 설계, 비즈니스 로직, 새 feature 구조.
@@ -68,7 +68,7 @@ CRUD·폼 스니펫은 [_template README](../apps/dashboard/src/features/_templa
 1. [PAGE_RECIPES.md](PAGE_RECIPES.md)에서 유형(1~5)을 고르고 표본 파일을 복사해 시작
 2. 레이아웃(헤더+사이드바)은 Storybook `Patterns/AppShell`, 설정 화면은 `Patterns/설정 화면` 이식
 3. **색은 기본적으로 지정하지 않는다** — 버튼·링크·뱃지는 자동으로 navy.
-   보조 텍스트만 `c="dimmed"`, 화면의 최우선 행동 1개만 `color="accent"`
+   보조 텍스트만 `c="dimmed"`, 상태 표시에만 기능색(red/yellow/green)
 4. **다크 모드는 규칙을 따르면 공짜** — §5의 스킴-인지 참조만 쓰면 별도 다크 작업이 없다
 5. Card·Modal·Group·Stack은 테마 기본값에 이미 KQC 규칙이 들어 있으므로 그대로 쓴다
 
@@ -95,7 +95,6 @@ CRUD·폼 스니펫은 [_template README](../apps/dashboard/src/features/_templa
 
 - [ ] `pnpm build` + `pnpm lint` 통과
 - [ ] Light/Dark 양쪽에서 깨지는 색 없음
-- [ ] 화면당 오렌지 1개 이하
 - [ ] 한 화면에 글자 크기 3~4개 이하, 임의 px 간격 없음 ([PAGE_RECIPES 30초 점검](PAGE_RECIPES.md))
 
 ## 9. Claude(AI)와 개발하기

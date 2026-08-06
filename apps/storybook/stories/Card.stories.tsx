@@ -8,7 +8,7 @@ const meta: Meta<typeof Card> = {
 export default meta;
 type Story = StoryObj<typeof Card>;
 
-/** 기본: radius 12 + 보더 + shadow xs (테마 고정 — 개별 조정 금지) */
+/** 기본: radius 12 + 패딩 20. 보더·그림자 없이 배경 한 톤 차이로만 구분 (테마 고정) */
 export const Default: Story = {
   render: () => (
     <Card w={320}>

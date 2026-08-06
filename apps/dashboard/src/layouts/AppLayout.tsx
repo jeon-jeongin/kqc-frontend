@@ -1,9 +1,9 @@
 import { Link, Outlet, useLocation } from 'react-router';
 import {
-  AppShell, NavLink, Group, Avatar, ScrollArea, Burger, ActionIcon,
+  AppShell, NavLink, Group, Stack, Avatar, ScrollArea, ActionIcon,
   useMantineColorScheme, useComputedColorScheme,
 } from '@kqc/ui';
-import { IconSun, IconMoon } from '@kqc/ui/icons';
+import { IconSun, IconMoon, IconLayoutSidebar } from '@kqc/ui/icons';
 import { useUiStore } from '../stores/ui';
 import { BrandSignature } from './BrandSignature';
 
@@ -16,15 +16,17 @@ const NAV = [
 
 function BrandLogo() {
   return (
-    <div
+    <Link
+      to="/"
+      aria-label="대시보드로 이동"
       style={{
-        color: 'light-dark(var(--mantine-color-navy-7), var(--mantine-color-gray-0))',
+        color: 'light-dark(var(--mantine-color-navy-9), var(--mantine-color-gray-0))',
         display: 'flex',
         alignItems: 'center',
       }}
     >
       <BrandSignature />
-    </div>
+    </Link>
   );
 }
 
@@ -56,13 +58,19 @@ export function AppLayout() {
         breakpoint: 'sm',
         collapsed: { desktop: !sidebarOpened, mobile: !sidebarOpened },
       }}
-      padding="lg"
+      padding="md"
     >
       <AppShell.Header>
-        <Group h="100%" px="lg" justify="space-between">
+        <Group h="100%" px="md" justify="space-between">
           <Group gap="sm">
-            {/* opened를 넘기지 않아 펼침 상태에서도 X로 바뀌지 않는다 */}
-            <Burger opened={false} onClick={toggleSidebar} size="sm" aria-label="사이드바 토글" />
+            <ActionIcon
+              variant="subtle"
+              color="gray"
+              aria-label={sidebarOpened ? '사이드바 접기' : '사이드바 펼치기'}
+              onClick={toggleSidebar}
+            >
+              <IconLayoutSidebar size={16} />
+            </ActionIcon>
             <BrandLogo />
           </Group>
           <Group gap="sm">
@@ -72,24 +80,25 @@ export function AppLayout() {
         </Group>
       </AppShell.Header>
 
-      {/* Navbar 8 + NavLink 16 = 24 → 헤더 px="lg"(24)의 햄버거와 좌측 정렬 일치 */}
+      {/* Navbar 8 + NavLink 12 = 20 → 헤더 px="md"(20)의 토글 버튼과 좌측 정렬 일치 */}
       <AppShell.Navbar p="sm">
         <AppShell.Section grow component={ScrollArea}>
-          {NAV.map((item) => (
-            <NavLink
-              key={item.to}
-              component={Link}
-              to={item.to}
-              label={item.label}
-              variant="light"
-              active={item.to === '/' ? pathname === '/' : pathname.startsWith(item.to)}
-              styles={{ root: { paddingInline: 16, borderRadius: 'var(--mantine-radius-sm)' } }}
-            />
-          ))}
+          <Stack gap={4}>
+            {NAV.map((item) => (
+              <NavLink
+                key={item.to}
+                component={Link}
+                to={item.to}
+                label={item.label}
+                variant="light"
+                active={item.to === '/' ? pathname === '/' : pathname.startsWith(item.to)}
+                styles={{ root: { paddingBlock: 6, paddingInline: 12, borderRadius: 'var(--mantine-radius-sm)' } }}
+              />
+            ))}
+          </Stack>
         </AppShell.Section>
       </AppShell.Navbar>
 
-      {/* 배경·flex는 테마 AppShell 기본값 (packages/ui/src/theme.ts) */}
       <AppShell.Main>
         <Outlet />
       </AppShell.Main>

@@ -22,14 +22,13 @@ export const Sizes: Story = {
   ),
 };
 
-/** 의미 색: navy=일반, green=성공, red=위험. accent 뱃지는 화면당 1종만(원칙 §2) */
+/** 기능색: red=오류, yellow=경고, green=성공 */
 export const Semantic: Story = {
   render: () => (
     <Group>
       <Badge>진행중</Badge>
       <Badge color="green" variant="light">완료</Badge>
       <Badge color="red" variant="light">실패</Badge>
-      <Badge color="accent" variant="filled">NEW</Badge>
     </Group>
   ),
 };

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import {
   Button, Card, DonutChart, Group, Modal, Select, Skeleton, Stack, Table, Text,
-  TextInput, Title, Divider,
+  TextInput, Title,
   TableToolbar, TablePagination, usePagedList,
 } from '@kqc/ui';
 import { useDisclosure } from '@kqc/ui';
@@ -55,7 +55,6 @@ function CreateKeyModal({ opened, onClose }: { opened: boolean; onClose: () => v
           onChange={setType}
           error={errors.type}
         />
-        <Divider />
         <Group justify="flex-end">
           <Button variant="subtle" color="gray" onClick={onClose}>취소</Button>
           <Button onClick={submit} loading={createKey.isPending}>생성</Button>
@@ -76,7 +75,7 @@ export function KeysPage() {
       (status === '전체' || k.status === status) &&
       (search === '' || k.name.includes(search) || k.id.includes(search)),
   );
-  const { pageItems, page, setPage, totalPages, totalCount, pageSize, setPageSize } =
+  const { pageItems, page, setPage, totalPages, pageSize, setPageSize } =
     usePagedList(visible, 5);
   const count = (s: string) => keys?.filter((k) => k.status === s).length ?? 0;
   const byType = KEY_TYPES.map((t, i) => ({
@@ -171,7 +170,6 @@ export function KeysPage() {
               <TablePagination
                 page={page}
                 totalPages={totalPages}
-                totalCount={totalCount}
                 onChange={setPage}
                 pageSize={pageSize}
                 onPageSizeChange={setPageSize}

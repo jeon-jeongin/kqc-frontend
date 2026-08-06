@@ -31,7 +31,7 @@ export const Default: Story = {
   },
 };
 
-/** 파괴적 액션 확인: 확인 버튼은 red — 오렌지 아님 (원칙 §2) */
+/** 파괴적 액션 확인: 확인 버튼은 red */
 export const Confirm: Story = {
   render: function Render() {
     const [opened, { open, close }] = useDisclosure(true);

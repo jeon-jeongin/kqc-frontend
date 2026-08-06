@@ -1,15 +1,10 @@
 import { forwardRef, type ComponentPropsWithoutRef } from 'react';
 import { Anchor } from '@mantine/core';
 
-/**
- * KQC TextButton — 배경 없는 텍스트 액션 (TDS Text Button 대응)
- * - size: 우리 fontSize 토큰 그대로 (xs 12 / sm 14 / md 16 / lg 18 / xl 20)
- * - variant: clear(기본) / arrow / underline
- * - 색은 navy(스킴 자동 전환), disabled는 dimmed
- */
+/** 배경 없는 텍스트 액션. 페이지 이동이면 Anchor, 동작 실행이면 이 컴포넌트. */
 export interface TextButtonProps extends ComponentPropsWithoutRef<'button'> {
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-  variant?: 'clear' | 'arrow' | 'underline';
+  variant?: 'clear' | 'arrow';
 }
 
 export const TextButton = forwardRef<HTMLButtonElement, TextButtonProps>(
@@ -21,7 +16,7 @@ export const TextButton = forwardRef<HTMLButtonElement, TextButtonProps>(
         ref={ref as never}
         fz={size}
         fw={700}
-        underline={disabled ? 'never' : variant === 'underline' ? 'always' : 'hover'}
+        underline="never"
         c={disabled ? 'dimmed' : 'navy'}
         disabled={disabled}
         style={{

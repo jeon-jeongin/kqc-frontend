@@ -1,17 +1,43 @@
-/**
- * KQC 전역 스타일 (styles.css에 자동 포함됨)
- * 근거: DESIGN_PRINCIPLES.md §5 접근성 기준선
- */
+:root {
+  --kqc-border-width: 0.5px;
+}
 
-/* 포커스 링: border.focus(navy.500 #2354B6) 2px. outline-offset로 요소 바깥에 그리므로
-   기준은 "요소 색"이 아니라 "페이지 배경 색"이다 — 흰 배경 대비 7.0:1.
-   다크에서는 500이 어두운 배경과 2.2:1로 미달 → 400(#356AD6, 3.1:1)으로 전환 */
+/* 구조 보더(카드·테이블·AppShell)만 얇게. Mantine이 폭을 1px로 박아둬서 여기서 덮는다.
+   인풋·버튼 보더는 대비가 필요하므로 건드리지 않는다. */
+[data-with-border],
+[data-with-table-border] {
+  border-width: var(--kqc-border-width);
+}
+[data-with-row-border] {
+  border-bottom-width: var(--kqc-border-width);
+}
+
+/* 페이지네이션: 선택된 버튼만 배경을 갖는다. hover 배경은 Mantine 규칙(더 높은 특이도)이 그대로 동작 */
+.kqc-pagination-control {
+  background-color: transparent;
+  border-color: transparent;
+}
+.kqc-pagination-control[data-active] {
+  background-color: var(--pagination-active-bg);
+  border-color: var(--pagination-active-bg);
+}
+
+/* Select/MultiSelect 선택 항목의 체크 아이콘 — Mantine 기본은 opacity 0.4의 본문색이라 흐리다 */
+[data-combobox-option][data-checked] > svg {
+  color: var(--mantine-primary-color-filled);
+  opacity: 1;
+}
+
+/* dots 로더를 1→2→3 순서로. Mantine 기본은 2번만 지연시켜 1·3이 함께 움직인다 */
+.kqc-loader > span:nth-child(2) { animation-delay: 0.27s; }
+.kqc-loader > span:nth-child(3) { animation-delay: 0.53s; }
+
+/* 포커스 링. outline-offset로 요소 바깥에 그리므로 기준은 요소 색이 아니라 페이지 배경 색이다 */
 :where(:focus-visible) {
-  outline: 2px solid light-dark(var(--mantine-color-navy-5), var(--mantine-color-navy-4));
+  outline: 2px solid light-dark(var(--mantine-color-navy-7), var(--mantine-color-navy-6));
   outline-offset: 2px;
 }
 
-/* 모션 접근성: 시스템 설정 존중 */
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,

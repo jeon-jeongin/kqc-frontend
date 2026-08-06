@@ -1,12 +1,11 @@
-/**
- * KQC 공식 시그니처 (원본: src/assets/kqc_logo.svg — path 좌표 무수정).
- * viewBox만 콘텐츠 경계로 크롭(원본은 여백 포함 822x282), 색은 currentColor로
- * 치환해 어두운 배경에서 화이트 전환 (가이드북 BS 08).
- */
-export function BrandSignature({ height = 22 }: { height?: number }) {
+/** viewBox 비율 — width를 명시해 높이만 바꿔도 비율이 유지된다 */
+const RATIO = 753 / 206;
+
+export function BrandSignature({ height = 18 }: { height?: number }) {
   return (
     <svg
       height={height}
+      width={height * RATIO}
       viewBox="33 34 753 206"
       fill="currentColor"
       aria-label="KQC"

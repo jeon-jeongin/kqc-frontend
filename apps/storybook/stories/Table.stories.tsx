@@ -14,7 +14,7 @@ const rows = [
   { id: 'QX-1035', name: 'API 연동 검토', status: '완료', qubits: 27 },
 ];
 
-/** 수치 컬럼은 우측 정렬 + 모노스페이스 (원칙 §3 code 역할) */
+/** 수치 컬럼은 우측 정렬 + 모노스페이스 */
 export const Default: Story = {
   render: () => (
     <Table w={520} verticalSpacing="sm">

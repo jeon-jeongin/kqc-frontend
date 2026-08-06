@@ -8,7 +8,7 @@ const meta: Meta<typeof Tabs> = {
 export default meta;
 type Story = StoryObj<typeof Tabs>;
 
-/** 활성 인디케이터만 오렌지 (소면적 상태 표시 — 원칙 §2 허용 2번) */
+/** 기본 탭 */
 export const Default: Story = {
   render: () => (
     <Tabs defaultValue="all" w={420}>
@@ -25,7 +25,7 @@ export const Default: Story = {
   ),
 };
 
-/** 서브 내비게이션 등 2차 탭은 pills — 색은 navy로 낮춰 위계 구분 */
+/** 서브 내비게이션 등 2차 탭은 pills */
 export const Pills: Story = {
   render: () => (
     <Tabs defaultValue="week" variant="pills" color="navy" w={420}>

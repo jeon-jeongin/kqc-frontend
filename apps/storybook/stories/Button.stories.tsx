@@ -9,15 +9,10 @@ const meta: Meta<typeof Button> = {
 export default meta;
 type Story = StoryObj<typeof Button>;
 
-/** 기본 버튼 — 브랜드 네이비 #012169 */
+/** 기본 버튼 — navy */
 export const Primary: Story = {};
 
-/** 핵심 CTA 전용 — 화면당 최대 1개 (DESIGN_PRINCIPLES §2) */
-export const AccentCTA: Story = {
-  args: { color: 'accent', children: '지금 신청하기' },
-};
-
-/** 위험(파괴적) 액션은 red — 오렌지 아님 (원칙 §2: 오렌지=강조, red=위험) */
+/** 위험(파괴적) 액션은 red */
 export const Variants: Story = {
   render: () => (
     <Group>
@@ -25,14 +20,13 @@ export const Variants: Story = {
       <Button variant="light">Light</Button>
       <Button variant="outline">Outline</Button>
       <Button variant="subtle">Subtle</Button>
-      <Button color="accent">핵심 CTA</Button>
       <Button color="red">삭제</Button>
       <Button color="red" variant="light">삭제 (보조)</Button>
     </Group>
   ),
 };
 
-/** 크기: sm / md(기본) / lg. 모바일 주요 버튼은 lg (터치 타겟 44px 근접) */
+/** 크기: sm / md(기본) / lg */
 export const Sizes: Story = {
   render: () => (
     <Group align="center">
@@ -53,7 +47,7 @@ export const Loading: Story = {
   render: () => (
     <Group>
       <Button loading>저장</Button>
-      <Button color="accent" loading>제출</Button>
+      <Button color="red" loading>삭제</Button>
     </Group>
   ),
 };

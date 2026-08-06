@@ -9,7 +9,7 @@ import {
 /**
  * 목록 화면 표준 조합 (PAGE_RECIPES 유형 2):
  * - 툴바: 좌측 필터, 우측 검색 (TableToolbar)
- * - 하단: 좌측 총 건수, 우측 페이지네이션 (TablePagination + usePagedList)
+ * - 하단: 가운데 페이지네이션, 우측 페이지당 개수 (TablePagination + usePagedList)
  * 필터 위젯 선택 기준 — 상태 3~5개: SegmentedControl / 옵션 많음: Select / 다중: Chip.Group
  */
 const meta: Meta = { title: 'Patterns/테이블 필터·페이지네이션', parameters: { layout: 'padded' } };
@@ -35,7 +35,7 @@ export const 전체_조합: StoryObj = {
         (parts.length === 0 || parts.includes(r.part)) &&
         (search === '' || r.name.includes(search) || r.id.includes(search)),
     );
-    const { pageItems, page, setPage, totalPages, totalCount } = usePagedList(visible, 6);
+    const { pageItems, page, setPage, totalPages } = usePagedList(visible, 6);
 
     return (
       <Card w={720}>
@@ -79,7 +79,6 @@ export const 전체_조합: StoryObj = {
         <TablePagination
           page={page}
           totalPages={totalPages}
-          totalCount={totalCount}
           onChange={setPage}
           pageSize={6}
           onPageSizeChange={() => {}}

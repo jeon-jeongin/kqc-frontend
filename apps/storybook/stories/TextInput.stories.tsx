@@ -27,7 +27,7 @@ export const WithDescription: Story = {
   args: { description: '실명을 입력해 주세요.', withAsterisk: true },
 };
 
-/** 에러: red 계열 고정 (오렌지로 대체 금지 — 원칙 §2) */
+/** 에러 상태 */
 export const Error: Story = {
   args: { error: '이름을 입력해 주세요.', withAsterisk: true },
 };

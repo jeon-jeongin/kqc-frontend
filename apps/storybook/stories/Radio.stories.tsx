@@ -22,11 +22,11 @@ export const InGroup: Story = {
   ),
 };
 
-/** 세로 선택지 사이 = stackSm(8) */
+/** 세로 선택지 사이 = stackMd(20) — 설명이 붙는 선택지가 섞여도 묶음이 흐트러지지 않는다 */
 export const Vertical: Story = {
   render: () => (
     <Radio.Group label="공개 범위" defaultValue="team">
-      <Stack gap="sm">
+      <Stack gap="md">
         <Radio value="all" label="전체 공개" />
         <Radio value="team" label="팀에만 공개" />
         <Radio value="private" label="비공개" description="나만 볼 수 있습니다" />

@@ -29,13 +29,13 @@
 └───────────────────────────────────────┘
 ```
 표본: [DashboardPage.tsx](../apps/dashboard/src/pages/DashboardPage.tsx) — 트렌드 StatCard 포함. 통째로 복사해서 시작.
-차트 스타일(목표 기준선 = accent, 차트당 1개)은 Storybook `Components/Charts` 참고.
+차트 스타일은 Storybook `Components/Charts` 참고.
 
 ## 유형 2 — 목록 + 액션 (Table)
 
 ```
 ┌ 제목 + 요약 캡션 ──────── [주요 액션 버튼] ┐   등록/생성 = Modal (zod 폼)
-│ ┌ 카드: TableToolbar (필터 좌 / 검색 우) ┐ │   상태 = Badge (navy/green/red, 경고 yellow)
+│ ┌ 카드: TableToolbar (필터 좌 / 검색 우) ┐ │   상태 = Badge (navy/green/red/yellow)
 │ │  전체 폭 테이블 (highlightOnHover)    │ │
 │ │  TablePagination (총 건수 / 페이지)   │ │
 └───────────────────────────────────────────┘
@@ -69,7 +69,7 @@
 - 필드 3개 이하 → 목록 옆 카드(유형 2의 폼 카드) 또는 Modal
 - 필드 4개 이상 → 별도 페이지: `<Card maw={640}>` 안에 `<Stack gap="md">`로 필드 나열
 - 버튼은 우하단 `<Group justify="flex-end">`: 취소(subtle gray) + 확인(기본 navy)
-- 파괴적 확인은 `color="red"` — 오렌지 아님
+- 파괴적 확인은 `color="red"`
 - 검증은 zod `safeParse` → `error` prop ([_template README](../apps/dashboard/src/features/_template/README.md)의 폼 스니펫)
 
 ## 유형 5 — 로그/이벤트 뷰어 (New Relic 스타일)
@@ -78,7 +78,7 @@
 ┌ 제목 + 기간 ─────────── [레벨 필터] ┐
 │ ┌ 발생 추이 카드 (미니 히스토그램) ┐ │   피크만 navy, 나머지 gray — light-dark()
 │ ┌ 필터 칩 + 촘촘한 테이블 ───────┐ │   시각 2줄(날짜/시간 mono) · 레벨 Badge · 호스트 Anchor
-└─────────────────────────────────┘     WARN=yellow (오렌지는 CTA 전용 §2)
+└─────────────────────────────────┘     WARN=yellow
 ```
 표본: [LogsPage.tsx](../apps/dashboard/src/pages/LogsPage.tsx) — `VolumeTimeline`(div 히스토그램)·`LevelBadge` 포함.
 
@@ -86,7 +86,7 @@
 
 | 항목 | 이미 정해진 값 |
 |---|---|
-| 색 | 지정 안 하면 navy. 상태는 Badge 3색. 오렌지는 화면당 CTA 1개 |
+| 색 | 지정 안 하면 navy. 상태는 Badge 기능색(red/yellow/green) |
 | 글자 크기 | 역할 5개 고정: 페이지 제목 24(h3) · 디스플레이 숫자 20(xl fw800) · 카드 제목 16(fw700) · 본문 14(sm) · 캡션 12(xs dimmed). 설정류 콘텐츠 화면은 3개(제목/본문/캡션)로 충분 |
 | 간격 | Stack 16 · Group 8 · 페이지 블록 lg(24) — 임의 px 금지 |
 | 카드·모달 모양 | radius·패딩·그림자 = 테마 기본값 그대로 |
@@ -96,10 +96,9 @@
 
 1. 임의 px 간격을 준 곳이 있나 → 지우고 기본값
 2. 한 화면에 글자 크기가 4개 이상인가 → 3개로
-3. 오렌지가 2곳 이상인가 → 1곳만
-4. 색 지정을 굳이 한 곳이 있나 → 지워보면 대부분 나아진다
-5. 정렬 축이 흔들리나 → 모든 블록이 같은 좌측선에서 시작하는지
-6. 그래도 어색하면 → 같은 유형의 레퍼런스(§7: Claude 콘솔, GitHub Settings)에서 같은 화면을 찾아 배치만 따라 한다
+3. 색 지정을 굳이 한 곳이 있나 → 지워보면 대부분 나아진다
+4. 정렬 축이 흔들리나 → 모든 블록이 같은 좌측선에서 시작하는지
+5. 그래도 어색하면 → 같은 유형의 레퍼런스(§7: Claude 콘솔, GitHub Settings)에서 같은 화면을 찾아 배치만 따라 한다
 
 ## 레퍼런스를 카탈로그로 쓰는 법
 

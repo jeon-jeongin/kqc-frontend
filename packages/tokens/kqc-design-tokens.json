@@ -1,44 +1,108 @@
 {
   "global": {
     "color": {
-      "navy": {
-        "50":  { "value": "#EBF0FA", "type": "color" },
-        "100": { "value": "#CDDBF4", "type": "color" },
-        "200": { "value": "#A5BEEC", "type": "color" },
-        "300": { "value": "#799EE3", "type": "color" },
-        "400": { "value": "#356AD6", "type": "color", "description": "다크 스킴 프라이머리. 흰 라벨 5.0:1 / 다크 배경 대비 3.1:1" },
-        "500": { "value": "#2354B6", "type": "color", "description": "라이트 스킴 프라이머리. 흰 라벨 7.0:1" },
-        "600": { "value": "#0D388F", "type": "color" },
-        "700": { "value": "#012169", "type": "color", "description": "KQC Main Color - PANTONE 280C. 브랜드 원색(로고·큰 면적 배경). 인터랙션에는 500/400 사용" },
-        "800": { "value": "#011A54", "type": "color" },
-        "900": { "value": "#011240", "type": "color" }
-      },
-      "orange": {
-        "50":  { "value": "#FDF1EA", "type": "color" },
-        "100": { "value": "#F9DAC8", "type": "color" },
-        "200": { "value": "#F4BFA0", "type": "color" },
-        "300": { "value": "#F0A377", "type": "color" },
-        "400": { "value": "#ED8B57", "type": "color" },
-        "500": { "value": "#EA733D", "type": "color", "description": "팀 Point Color - PANTONE 4012C. 절제 규칙 필수" },
-        "600": { "value": "#D05F2B", "type": "color" },
-        "700": { "value": "#AC4C20", "type": "color" },
-        "800": { "value": "#863A17", "type": "color" },
-        "900": { "value": "#5E280F", "type": "color" }
-      },
       "gray": {
         "50":  { "value": "#F8F9FB", "type": "color" },
         "100": { "value": "#F1F3F6", "type": "color" },
         "200": { "value": "#E4E8EE", "type": "color" },
         "300": { "value": "#CFD6DE", "type": "color" },
-        "400": { "value": "#AAB4C0", "type": "color" },
+        "400": { "value": "#AAB4C0", "type": "color", "description": "placeholder/disabled 전용" },
         "500": { "value": "#8593A3", "type": "color" },
         "600": { "value": "#64748B", "type": "color" },
         "700": { "value": "#475569", "type": "color" },
         "800": { "value": "#2E3A4A", "type": "color" },
         "900": { "value": "#1B2430", "type": "color" }
       },
-      "red":   { "50": { "value": "#FBEBEC", "type": "color" }, "500": { "value": "#DC3545", "type": "color" }, "600": { "value": "#B02A37", "type": "color" } },
-      "green": { "50": { "value": "#E1F5EE", "type": "color" }, "500": { "value": "#1D9E75", "type": "color" }, "600": { "value": "#0F6E56", "type": "color" } },
+      "navy": {
+        "50":  { "value": "#EBF0FA", "type": "color" },
+        "100": { "value": "#CDDBF3", "type": "color" },
+        "200": { "value": "#AEC5EE", "type": "color" },
+        "300": { "value": "#90AFE8", "type": "color" },
+        "400": { "value": "#7299E2", "type": "color" },
+        "500": { "value": "#5482DC", "type": "color" },
+        "600": { "value": "#356AD6", "type": "color", "description": "다크 스킴 filled" },
+        "700": { "value": "#2354B6", "type": "color", "description": "라이트 스킴 filled" },
+        "800": { "value": "#0D378F", "type": "color" },
+        "900": { "value": "#012169", "type": "color", "description": "KQC Main Color - PANTONE 280C" }
+      },
+      "red": {
+        "50":  { "value": "#FDEBEB", "type": "color" },
+        "100": { "value": "#FACFCE", "type": "color" },
+        "200": { "value": "#F9B0AF", "type": "color" },
+        "300": { "value": "#F88F90", "type": "color" },
+        "400": { "value": "#FA666D", "type": "color" },
+        "500": { "value": "#FA2349", "type": "color" },
+        "600": { "value": "#DC133C", "type": "color" },
+        "700": { "value": "#B30D2F", "type": "color" },
+        "800": { "value": "#81061F", "type": "color" },
+        "900": { "value": "#540412", "type": "color" }
+      },
+      "orange": {
+        "50":  { "value": "#FCECE6", "type": "color" },
+        "100": { "value": "#FAD0BF", "type": "color" },
+        "200": { "value": "#F9B294", "type": "color" },
+        "300": { "value": "#F89165", "type": "color" },
+        "400": { "value": "#F56C28", "type": "color" },
+        "500": { "value": "#DB590F", "type": "color" },
+        "600": { "value": "#BD4C0C", "type": "color" },
+        "700": { "value": "#993C07", "type": "color" },
+        "800": { "value": "#6E2903", "type": "color" },
+        "900": { "value": "#491903", "type": "color" }
+      },
+      "yellow": {
+        "50":  { "value": "#FEF5EA", "type": "color" },
+        "100": { "value": "#FCE4C4", "type": "color" },
+        "200": { "value": "#FBD095", "type": "color" },
+        "300": { "value": "#FAB853", "type": "color" },
+        "400": { "value": "#EAA326", "type": "color", "description": "filled 배경 — 흰 라벨 불가, 라벨은 900" },
+        "500": { "value": "#D28F14", "type": "color" },
+        "600": { "value": "#B27910", "type": "color" },
+        "700": { "value": "#8C5F0A", "type": "color", "description": "텍스트용" },
+        "800": { "value": "#634105", "type": "color" },
+        "900": { "value": "#3A2503", "type": "color" }
+      },
+      "green": {
+        "50":  { "value": "#E9F3EA", "type": "color" },
+        "100": { "value": "#C4E2C7", "type": "color" },
+        "200": { "value": "#9DD2A3", "type": "color" },
+        "300": { "value": "#71C17E", "type": "color" },
+        "400": { "value": "#44AF5B", "type": "color" },
+        "500": { "value": "#39964E", "type": "color" },
+        "600": { "value": "#2F7E40", "type": "color" },
+        "700": { "value": "#226631", "type": "color" },
+        "800": { "value": "#11471F", "type": "color" },
+        "900": { "value": "#073413", "type": "color" }
+      },
+      "teal": {
+        "50":  { "value": "#E4F4F3", "type": "color" },
+        "100": { "value": "#B5E4E1", "type": "color" },
+        "200": { "value": "#7DD4D0", "type": "color" },
+        "300": { "value": "#4FC1BD", "type": "color" },
+        "400": { "value": "#44A9A5", "type": "color" },
+        "500": { "value": "#3A918E", "type": "color" },
+        "600": { "value": "#2F7A78", "type": "color" },
+        "700": { "value": "#226360", "type": "color" },
+        "800": { "value": "#124544", "type": "color" },
+        "900": { "value": "#073130", "type": "color" }
+      },
+      "purple": {
+        "50":  { "value": "#F3EDFA", "type": "color" },
+        "100": { "value": "#E2D3F5", "type": "color" },
+        "200": { "value": "#D2B8F3", "type": "color" },
+        "300": { "value": "#C39CF0", "type": "color" },
+        "400": { "value": "#B480EC", "type": "color" },
+        "500": { "value": "#A464E3", "type": "color" },
+        "600": { "value": "#914FCD", "type": "color" },
+        "700": { "value": "#7A36B3", "type": "color" },
+        "800": { "value": "#5A1B8B", "type": "color" },
+        "900": { "value": "#3A0A5D", "type": "color" }
+      },
+      "background": {
+        "light":     { "value": "#FFFFFF", "type": "color", "description": "라이트 표면(카드·모달)" },
+        "lightGrey": { "value": "{color.gray.100}", "type": "color", "description": "라이트 페이지 배경" },
+        "dark":      { "value": "#1B1F24", "type": "color", "description": "다크 페이지 배경" },
+        "darkGrey":  { "value": "#21252A", "type": "color", "description": "다크 컴포넌트 표면(카드·모달)" }
+      },
       "white": { "value": "#FFFFFF", "type": "color" }
     },
 
@@ -160,14 +224,14 @@
       "inlineXs": { "value": "{spacing.4}",  "type": "spacing", "description": "아이콘-텍스트 사이" },
       "inlineSm": { "value": "{spacing.8}",  "type": "spacing", "description": "버튼 그룹, 칩 사이" },
       "stackSm":  { "value": "{spacing.8}",  "type": "spacing", "description": "라벨-인풋 사이" },
-      "stackMd":  { "value": "{spacing.16}", "type": "spacing", "description": "폼 필드 사이, 카드 내부 요소" },
+      "stackMd":  { "value": "{spacing.20}", "type": "spacing", "description": "컴포넌트 기준 단위 — 패딩·블록 간격·gap" },
       "stackLg":  { "value": "{spacing.24}", "type": "spacing", "description": "카드 사이, 콘텐츠 블록 사이" },
       "sectionSm":{ "value": "{spacing.48}", "type": "spacing", "description": "앱 화면 섹션 사이" },
       "sectionLg":{ "value": "{spacing.80}", "type": "spacing", "description": "랜딩/마케팅 섹션 사이" },
       "inset": {
         "control": { "value": "{spacing.12}", "type": "spacing", "description": "인풋/버튼 좌우 패딩 기준" },
-        "card":    { "value": "{spacing.24}", "type": "spacing" },
-        "modal":   { "value": "{spacing.32}", "type": "spacing" }
+        "card":    { "value": "{spacing.20}", "type": "spacing" },
+        "modal":   { "value": "{spacing.20}", "type": "spacing" }
       }
     },
 
@@ -182,36 +246,36 @@
     "text": {
       "primary":   { "value": "{color.gray.900}", "type": "color" },
       "secondary": { "value": "{color.gray.600}", "type": "color" },
-      "muted":     { "value": "{color.gray.400}", "type": "color", "description": "placeholder/disabled 전용. 본문 금지(대비 미달)" },
-      "brand":     { "value": "{color.navy.700}", "type": "color", "description": "브랜드 표기(로고·워드마크) 전용. 링크/액션 텍스트는 action.primary" },
+      "muted":     { "value": "{color.gray.400}", "type": "color", "description": "placeholder/disabled 전용" },
+      "brand":     { "value": "{color.navy.900}", "type": "color" },
       "inverse":   { "value": "{color.white}", "type": "color" },
-      "error":     { "value": "{color.red.600}", "type": "color" },
-      "success":   { "value": "{color.green.600}", "type": "color" }
+      "error":     { "value": "{color.red.700}", "type": "color" },
+      "warning":   { "value": "{color.yellow.700}", "type": "color" },
+      "success":   { "value": "{color.green.700}", "type": "color" }
     },
     "bg": {
       "page":        { "value": "{color.gray.50}", "type": "color" },
-      "surface":     { "value": "{color.white}", "type": "color" },
+      "surface":     { "value": "{color.background.light}", "type": "color" },
       "subtle":      { "value": "{color.gray.100}", "type": "color" },
-      "brand":       { "value": "{color.navy.700}", "type": "color", "description": "브랜드 원색 배경(히어로 밴드 등 큰 면적). 위 텍스트는 항상 white" },
-      "brandSubtle": { "value": "{color.navy.50}", "type": "color" },
-      "accentSubtle":{ "value": "{color.orange.50}", "type": "color", "description": "화면당 1개 영역 이하" }
+      "brand":       { "value": "{color.navy.900}", "type": "color", "description": "위 텍스트는 항상 white" },
+      "brandSubtle": { "value": "{color.navy.50}", "type": "color" }
+    },
+    "bgDark": {
+      "page":    { "value": "{color.background.dark}", "type": "color" },
+      "surface": { "value": "{color.background.darkGrey}", "type": "color", "description": "컨트롤 대비 계산의 기준면" }
     },
     "border": {
-      "default":   { "value": "{color.gray.200}", "type": "color" },
-      "strong":    { "value": "{color.gray.300}", "type": "color" },
-      "focus":     { "value": "{color.navy.500}", "type": "color" },
-      "focusDark": { "value": "{color.navy.400}", "type": "color", "description": "다크 스킴 포커스 링. 500은 다크 배경에서 2.2:1로 미달" }
+      "default":     { "value": "{color.gray.200}", "type": "color" },
+      "strong":      { "value": "{color.gray.300}", "type": "color" },
+      "defaultDark": { "value": "#3E4347", "type": "color" },
+      "focus":       { "value": "{color.navy.700}", "type": "color" },
+      "focusDark":   { "value": "{color.navy.600}", "type": "color" }
     },
     "action": {
-      "primary":          { "value": "{color.navy.500}", "type": "color", "description": "라이트 스킴 기본 액션. 700/800은 다크 스킴에서 배경과 구분되지 않아 사용 금지" },
-      "primaryHover":     { "value": "{color.navy.600}", "type": "color" },
-      "primaryDark":      { "value": "{color.navy.400}", "type": "color", "description": "다크 스킴 기본 액션" },
-      "primaryHoverDark": { "value": "#3E71D7", "type": "color", "description": "navy.400과 navy.300 사이. 다크에서 hover는 밝아져야 하지만 흰 라벨 4.5:1을 지키려면 400보다 한 단계만 밝힐 수 있다" },
-      "accent":           { "value": "{color.orange.500}", "type": "color", "description": "핵심 CTA 전용. 화면당 최대 1개" },
-      "accentHover":      { "value": "{color.orange.600}", "type": "color" }
-    },
-    "indicator": {
-      "active": { "value": "{color.orange.500}", "type": "color", "description": "탭 active bar, 현재 스텝 등 소면적" }
+      "primary":          { "value": "{color.navy.700}", "type": "color" },
+      "primaryHover":     { "value": "{color.navy.800}", "type": "color" },
+      "primaryDark":      { "value": "{color.navy.600}", "type": "color" },
+      "primaryHoverDark": { "value": "#3E71D7", "type": "color" }
     }
   }
 }

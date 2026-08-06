@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { useTasksQuery } from '../features/tasks/queries';
 import { StatusBadge } from '../features/tasks/StatusBadge';
 
-/* 예시 데이터 — 집계 API가 생기면 features/_template 방식(schema→query)으로 교체 */
+/* 예시 데이터 — 집계 API가 생기면 schema→query로 교체 */
 const monthly = [
   { month: '4월', 완료: 51, 진행: 22 },
   { month: '5월', 완료: 47, 진행: 15 },

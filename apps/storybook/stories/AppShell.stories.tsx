@@ -7,7 +7,6 @@ import {
 /**
  * 패턴: 앱 공통 레이아웃 (헤더 + 사이드바).
  * MFE에서는 app-shell 앱이 이 패턴을 소유하고, 리모트 앱은 본문만 채운다.
- * 활성 메뉴 = navy light 배경. 사이드바에 accent 사용 금지 (원칙 §2).
  */
 const meta: Meta = {
   title: 'Patterns/AppShell',
@@ -57,7 +56,6 @@ export const Sidebar: StoryObj = {
           </AppShell.Section>
         </AppShell.Navbar>
 
-        {/* 배경은 테마 AppShell 기본값 — 앱에서 별도 지정 불필요 */}
         <AppShell.Main>
           <Title order={3} mb="sm">대시보드</Title>
           <Text size="sm" c="dimmed">

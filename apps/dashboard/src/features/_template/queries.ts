@@ -46,7 +46,6 @@ export function useUpdateItemMutation() {
 export function useDeleteItemMutation() {
   const queryClient = useQueryClient();
   return useMutation({
-    // 삭제 응답 본문은 쓰지 않으므로 형태 검증 생략 (204/{ok} 어느 백엔드든 무관)
     mutationFn: (id: string) => api(`/items/${id}`, z.unknown(), { method: 'DELETE' }),
     onSuccess: () => queryClient.invalidateQueries({ queryKey: itemKeys.all }),
   });

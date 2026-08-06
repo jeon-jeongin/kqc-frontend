@@ -36,11 +36,6 @@ export const Arrow: Story = {
   ),
 };
 
-/** underline: 본문 안에 섞일 때 클릭 가능함을 명시 */
-export const Underline: Story = {
-  args: { variant: 'underline', children: '약관 전문 보기' },
-};
-
 export const Disabled: Story = {
   render: () => (
     <Group align="center">
