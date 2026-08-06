@@ -74,7 +74,7 @@ const kqcVariantColorResolver: VariantColorsResolver = (input) => {
 export const theme = createTheme({
   colors: { navy, accent, gray },
   primaryColor: 'navy',
-  primaryShade: { light: 7, dark: 4 }, // 라이트=원색 #012169 / 다크=#5476BD (다크 배경 대비 확보)
+  primaryShade: { light: 5, dark: 3 }, // 라이트=#2F53A3 / 다크=#7B95CF (가시성 개선)
   variantColorResolver: kqcVariantColorResolver,
 
   /* ---------- 타이포그래피 (역할 기반) ---------- */
@@ -181,6 +181,16 @@ export const theme = createTheme({
     // 선택된 옵션 체크는 우측 끝 (라벨 정렬 유지)
     Select: { defaultProps: { radius: 'sm', checkIconPosition: 'right' } },
     MultiSelect: { defaultProps: { radius: 'sm', checkIconPosition: 'right' } },
+    // 페이지 배경(§5 스킴-인지) + 세로 flex(페이지가 화면 높이를 채울 수 있게) — 앱마다 복붙하지 않는다
+    AppShell: {
+      styles: {
+        main: {
+          background: 'light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8))',
+          display: 'flex',
+          flexDirection: 'column',
+        },
+      },
+    },
     // 사이드바 내비게이션: 활성 = navy light 배경 (accent 아님 — 원칙 §2)
     NavLink: { defaultProps: { color: 'navy' } },
     Pagination: { defaultProps: { size: 'sm', siblings: 1 } },

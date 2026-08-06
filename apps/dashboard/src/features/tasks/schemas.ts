@@ -1,5 +1,7 @@
 import { z } from 'zod';
 
+/* 실제 feature 예시 — features/_template 기반 */
+
 export const TASK_PARTS = ['플랫폼', '인프라', '리서치'] as const;
 export const TASK_STATUSES = ['진행중', '완료', '실패'] as const;
 

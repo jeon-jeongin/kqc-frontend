@@ -57,7 +57,8 @@ export const Sidebar: StoryObj = {
           </AppShell.Section>
         </AppShell.Navbar>
 
-        <AppShell.Main style={{ background: "light-dark(var(--mantine-color-gray-0), var(--mantine-color-dark-8))" }}>
+        {/* 배경은 테마 AppShell 기본값 — 앱에서 별도 지정 불필요 */}
+        <AppShell.Main>
           <Title order={3} mb="sm">대시보드</Title>
           <Text size="sm" c="dimmed">
             헤더의 ☰ 버튼으로 사이드바 전체가 접히고, "설정" 클릭으로 하위 메뉴가 접힙니다.

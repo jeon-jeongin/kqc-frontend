@@ -16,6 +16,13 @@ export class ApiError extends Error {
  * 모든 서버 통신의 단일 통로.
  * - VITE_API_URL이 없으면 mock으로 동작 (백엔드 연결 시 .env만 추가하면 됨)
  * - 응답은 zod 스키마를 통과해야만 앱에 들어온다 — 스키마가 곧 API 계약
+ *
+ * 사용 예 — 훅으로 감싼 전체 패턴은 features/_template/queries.ts 참고:
+ *   api('/items', ItemListSchema)                                                    // GET 목록
+ *   api(`/items/${id}`, ItemSchema)                                                  // GET 상세
+ *   api('/items', ItemSchema, { method: 'POST', body: JSON.stringify(input) })       // 등록
+ *   api(`/items/${id}`, ItemSchema, { method: 'PATCH', body: JSON.stringify(input) })// 수정
+ *   api(`/items/${id}`, ItemSchema, { method: 'DELETE' })                            // 삭제
  */
 export async function api<S extends z.ZodType>(
   path: string,

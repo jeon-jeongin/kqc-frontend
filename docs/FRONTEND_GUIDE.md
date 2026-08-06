@@ -9,7 +9,7 @@
 
 | # | 규칙 | 강제 장치 |
 |---|---|---|
-| ① | UI는 `@kqc/ui`에서만 import — `@mantine/*` 직접 import 금지 | ESLint가 빌드에서 차단 |
+| ① | UI는 `@kqc/ui`에서만 import — `@mantine/*` 직접 import 금지. 아이콘도 `@kqc/ui/icons`에서 ([tabler.io/icons](https://tabler.io/icons)에서 검색) | ESLint가 빌드에서 차단 |
 | ② | 색 규칙: 색은 기본적으로 지정하지 않음 · 오렌지는 화면당 CTA 1개 · 스킴 고정 색 금지 | [DESIGN_PRINCIPLES §2·§5](DESIGN_PRINCIPLES.md) + 코드리뷰 |
 | ③ | 서버 통신은 `api()` + zod 스키마 경계를 통해서만 (fetch/axios 직접 호출 금지) | 코드리뷰 |
 
@@ -57,13 +57,11 @@ src/
 
 ## 4. 새 feature 만들기
 
-**`src/features/_template/`을 복사해서 시작한다.** 상세 절차와 폼 스니펫은
-[_template README](../apps/dashboard/src/features/_template/README.md)에 있다. 요약:
-
-1. `_template` 복사 → 이름 치환 (`Item` → 엔티티명)
-2. `schemas.ts` 필드를 실제 API에 맞게 수정 — **스키마가 곧 API 계약**
-3. `mocks/db.ts`에 mock 응답 추가 (백엔드가 이미 있으면 생략)
-4. `pages/`에서 훅 호출해 조립 — 배치는 [PAGE_RECIPES.md](PAGE_RECIPES.md)의 유형(1~5)을 먼저 고른다
+**`src/features/_template/`을 복사해서 시작한다.** 절차(복사 → 치환 → 스키마 → mock → 조립)와
+CRUD·폼 스니펫은 [_template README](../apps/dashboard/src/features/_template/README.md)가 단일 출처다.
+실제 예시는 [tasks feature](../apps/dashboard/src/features/tasks/) +
+[TasksPage](../apps/dashboard/src/pages/TasksPage.tsx) (폼 검증·mutation은 `CreateTaskModal` 참고).
+페이지 배치는 [PAGE_RECIPES.md](PAGE_RECIPES.md)의 유형(1~5)을 먼저 고른다.
 
 ## 5. 화면 만들기 순서
 
@@ -99,3 +97,39 @@ src/
 - [ ] Light/Dark 양쪽에서 깨지는 색 없음
 - [ ] 화면당 오렌지 1개 이하
 - [ ] 한 화면에 글자 크기 3~4개 이하, 임의 px 간격 없음 ([PAGE_RECIPES 30초 점검](PAGE_RECIPES.md))
+
+## 9. Claude(AI)와 개발하기
+
+핵심은 하나다: **참조 파일을 명시하면 Claude가 이 프로젝트의 패턴을 그대로 따른다.**
+패턴을 매번 말로 설명하지 말고, 아래처럼 기준 파일을 지목한다.
+
+### 새 feature 만들기
+
+```
+src/features/_template을 복사해서 reports feature를 만들어줘.
+- schemas.ts 필드: { id, title, author, createdAt }, API 경로는 /reports
+- src/mocks/db.ts의 mockFetch에 mock 분기도 추가 (tasks 분기 참고)
+- docs/FRONTEND_GUIDE.md의 강제 3규칙 준수
+```
+
+### 새 페이지 만들기 (목록 화면)
+
+```
+ReportsPage를 만들어줘.
+- src/pages/TasksPage.tsx와 같은 구조 (TableToolbar + Table + TablePagination)
+- features/reports의 훅 사용, 직접 fetch 금지
+- src/app/router.tsx와 layouts/AppLayout.tsx의 NAV에도 등록
+```
+
+### 등록 폼 추가
+
+```
+ReportsPage에 등록 모달을 추가해줘.
+src/pages/TasksPage.tsx의 CreateTaskModal 패턴을 따라
+(useState + zod safeParse + mutation, 에러는 필드별 표시).
+```
+
+### 검수 요령
+
+Claude가 만든 코드도 사람이 쓴 코드와 같은 기준으로 본다 —
+**강제 3규칙(§0)과 §8 완성 기준 체크리스트를 그대로 적용**하고, `pnpm build`가 통과하는지 확인하면 끝.

@@ -13,6 +13,10 @@ export default [
               group: ['@mantine/*'],
               message: 'UI는 @kqc/ui에서만 import 합니다 — docs/FRONTEND_GUIDE.md 강제 규칙 ①',
             },
+            {
+              group: ['@tabler/icons-react'],
+              message: '아이콘은 @kqc/ui/icons에서 import 합니다 — docs/FRONTEND_GUIDE.md 강제 규칙 ①',
+            },
           ],
         },
       ],

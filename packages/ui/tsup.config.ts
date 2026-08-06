@@ -2,7 +2,7 @@ import { defineConfig } from 'tsup';
 import { copyFileSync, cpSync, writeFileSync } from 'node:fs';
 
 export default defineConfig({
-  entry: ['src/index.ts'],
+  entry: ['src/index.ts', 'src/icons.ts'],
   format: ['esm'],
   dts: true,
   clean: true,

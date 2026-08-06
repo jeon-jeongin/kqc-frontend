@@ -9,6 +9,8 @@ import { useTasksQuery, useCreateTaskMutation } from '../features/tasks/queries'
 import { TaskCreateSchema, TASK_PARTS } from '../features/tasks/schemas';
 import { StatusBadge } from '../features/tasks/StatusBadge';
 
+/* 참조 구현 — 새 페이지를 만들 때의 표본. 절차는 features/_template/README.md */
+
 function CreateTaskModal({ opened, onClose }: { opened: boolean; onClose: () => void }) {
   const createTask = useCreateTaskMutation();
   const [name, setName] = useState('');
