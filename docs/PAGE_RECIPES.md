@@ -35,7 +35,7 @@
 
 ```
 ┌ 제목 + 요약 캡션 ──────── [주요 액션 버튼] ┐   등록/생성 = Modal (zod 폼)
-│ ┌ 카드: TableToolbar (필터 좌 / 검색 우) ┐ │   상태 = Badge (navy/green/red/yellow)
+│ ┌ 카드: TableToolbar (필터 좌 / 검색 우) ┐ │   상태 = Badge (navy/green/red/yellow/gray)
 │ │  전체 폭 테이블 (highlightOnHover)    │ │
 │ │  TablePagination (총 건수 / 페이지)   │ │
 └───────────────────────────────────────────┘
@@ -86,7 +86,7 @@
 
 | 항목 | 이미 정해진 값 |
 |---|---|
-| 색 | 지정 안 하면 navy. 상태는 Badge 기능색(red/yellow/green) |
+| 색 | 지정 안 하면 navy. 상태는 Badge 기능색(red/yellow/green) · 종료 상태(폐기·비활성)는 중립 gray |
 | 글자 크기 | 역할 5개 고정: 페이지 제목 24(h3) · 디스플레이 숫자 20(xl fw800) · 카드 제목 16(fw700) · 본문 14(sm) · 캡션 12(xs dimmed). 설정류 콘텐츠 화면은 3개(제목/본문/캡션)로 충분 |
 | 간격 | Stack 16 · Group 8 · 페이지 블록 lg(24) — 임의 px 금지 |
 | 카드·모달 모양 | radius·패딩·그림자 = 테마 기본값 그대로 |

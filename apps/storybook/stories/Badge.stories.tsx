@@ -22,13 +22,18 @@ export const Sizes: Story = {
   ),
 };
 
-/** 기능색: red=오류, yellow=경고, green=성공 */
+/**
+ * 앱 상태 배지 규약 (대시보드·작업 관리·키 관리와 동일) —
+ * 진행중=navy(기본) · 완료/활성/사용중=green · 실패/회수 필요=red · 만료 예정=yellow(경고) · 폐기=gray
+ */
 export const Semantic: Story = {
   render: () => (
     <Group>
       <Badge>진행중</Badge>
-      <Badge color="green" variant="light">완료</Badge>
-      <Badge color="red" variant="light">실패</Badge>
+      <Badge color="green">완료</Badge>
+      <Badge color="red">실패</Badge>
+      <Badge color="yellow">만료 예정</Badge>
+      <Badge color="gray">폐기</Badge>
     </Group>
   ),
 };

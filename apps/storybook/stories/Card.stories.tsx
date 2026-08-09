@@ -14,7 +14,7 @@ export const Default: Story = {
     <Card w={320}>
       <Group justify="space-between" mb="xs">
         <Text fw={700}>월간 인프라 점검</Text>
-        <Badge color="green" variant="light">완료</Badge>
+        <Badge color="green">완료</Badge>
       </Group>
       <Text size="sm" c="dimmed">
         7월 정기 점검이 완료되었습니다. 이슈 0건.

@@ -1,11 +1,10 @@
 import { Link, Outlet, useLocation } from 'react-router';
 import {
-  AppShell, NavLink, Group, Stack, Avatar, ScrollArea, ActionIcon,
+  AppShell, NavLink, Group, Stack, Avatar, ScrollArea, ActionIcon, BrandSignature,
   useMantineColorScheme, useComputedColorScheme,
 } from '@kqc/ui';
 import { IconSun, IconMoon, IconLayoutSidebar } from '@kqc/ui/icons';
 import { useUiStore } from '../stores/ui';
-import { BrandSignature } from './BrandSignature';
 
 const NAV = [
   { to: '/', label: '대시보드' },

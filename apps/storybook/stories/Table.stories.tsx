@@ -32,7 +32,7 @@ export const Default: Story = {
             <Table.Td><Text ff="monospace" size="sm">{r.id}</Text></Table.Td>
             <Table.Td>{r.name}</Table.Td>
             <Table.Td>
-              <Badge color={r.status === '완료' ? 'green' : 'navy'} variant="light">
+              <Badge color={r.status === '완료' ? 'green' : r.status === '실패' ? 'red' : 'navy'}>
                 {r.status}
               </Badge>
             </Table.Td>

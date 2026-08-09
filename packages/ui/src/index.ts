@@ -5,6 +5,7 @@ export { tokens } from '@kqc/tokens';
 
 export { Button, type ButtonProps } from './components/Button';
 export { TextButton, type TextButtonProps } from './components/TextButton';
+export { BrandSignature } from './components/BrandSignature';
 export { TableToolbar } from './components/TableToolbar';
 export { TablePagination } from './components/TablePagination';
 export { usePagedList } from './usePagedList';
